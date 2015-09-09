@@ -1,0 +1,66 @@
+
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" type="text/css" href="/static/public/css/main.css" />	
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
+	<link rel="stylessheet" type=text/css" href="https://cdn.datatables.net/1.10.5/css/jquery.dataTables.css"> 
+	</head>
+	<body>
+	<div id="wrapper">
+<!--	<div id="header"> -->
+<!--	<h1><a href="https://libcc.org/">Virtual Computer Lab(VCL)</a></h1> -->
+	{% if request.user.is_authenticated %}
+		<a id="logout" class="button" href="./logout">Logout</a>
+	{% endif %}
+	
+<!--	</div> -->
+	<div id="sidebar">
+		{% block sidebar %}
+		{% endblock %}
+	</div>
+	<div id="container">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<div id="footer">
+<!--	<a href="https://libcc.org/info">Find out more about libcc.org</a> -->
+	<br/>
+	Powered by an Amazon <a href="http://aws.amazon.com/education/">AWS in education </a> grant
+	<br> Contact <a href="mailto:cvora@umd.edu">Chintan Vora</a> for assistance
+	{% block content-related %}
+	{% endblock %}
+	<!--<a id="logout" class="button" href="./logout">Logout</a> -->
+	</div>
+	</div>
+	
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('button').click(function(){
+		
+        $('.ack').html('Please Wait... Page will Refresh once the action is complete');
+		$(this).toggleClass('active');
+		//alert('clicked!');
+		console.log("in ajax");
+    });
+})
+</script>
+<script>
+$(document).ready(function() {
+ //   $('#example').dataTable();
+} );
+</script>
+
+	</body>
+</html>
