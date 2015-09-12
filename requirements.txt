@@ -13,7 +13,7 @@ ipython[notebook]==3.2.1
 psycopg2==2.6
 Werkzeug==0.10.4
 youtube-dl>=2014.06.26
-argeparse
+argparse
 boto
 django-cas-client==1.2.0
 django-registration
